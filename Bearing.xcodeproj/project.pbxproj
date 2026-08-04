@@ -22,6 +22,7 @@
 		70C3479E79A9A5461C88F385 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44DBB7356F45043A3E6F2D /* Coordinate.swift */; };
 		766C9244EAA89E3E28B4D692 /* NetworkErrorMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA266777F5849972D3CDE4B /* NetworkErrorMappingTests.swift */; };
 		960F14D5286C34038A189BDC /* OutdoorConditionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00C8B6289267AA8EC18F520 /* OutdoorConditionsService.swift */; };
+		9EBDE175C2733D67AA2BA2A7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29770E7208691739000456 /* LocationService.swift */; };
 		A84322EBF237B7773F4EB9CC /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C959903AFF255EA7FB275E /* ConfigurationTests.swift */; };
 		AB8C862C56BA804B4F40EC7E /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA33521F0E8DAB535AEC19 /* MockNetworkService.swift */; };
 		BA08315BBCB38D0231194643 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAFEBBB100E9DEBDE55838 /* Fixture.swift */; };
@@ -62,6 +63,7 @@
 		4AA5FB996EB48835E1D24232 /* Bearing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bearing.entitlements; sourceTree = "<group>"; };
 		5510A134FDDCFAEADC853601 /* CurrentValueStreamableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueStreamableTests.swift; sourceTree = "<group>"; };
 		59390123ACCBBF574651DCF7 /* forecast.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forecast.json; sourceTree = "<group>"; };
+		6F29770E7208691739000456 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7452AAD5C6D1A80817C0BF70 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		8460C2D25C110B32C40F7815 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		8FCA33521F0E8DAB535AEC19 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		E1D5434E29E8D489D73001E5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6F29770E7208691739000456 /* LocationService.swift */,
 				E00C8B6289267AA8EC18F520 /* OutdoorConditionsService.swift */,
 			);
 			path = Services;
@@ -403,6 +406,7 @@
 				F5A3FDECFDB511442CF694E3 /* Configuration.swift in Sources */,
 				70C3479E79A9A5461C88F385 /* Coordinate.swift in Sources */,
 				C132F1662E4C175067DFCC14 /* CurrentValueStreamable.swift in Sources */,
+				9EBDE175C2733D67AA2BA2A7 /* LocationService.swift in Sources */,
 				EDBF069E7BD76311C776F1C1 /* NetworkError.swift in Sources */,
 				3CD3136470383A14747F08B4 /* NetworkService.swift in Sources */,
 				2943B235A5A4566DC0635CEE /* OutdoorConditions.swift in Sources */,
