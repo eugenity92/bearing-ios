@@ -34,24 +34,29 @@ public enum ReadinessWindow {
         sleepIntervals: [SleepInterval],
         calendar: Calendar
     ) -> [DayMetrics] {
-        let hrvByDay = Dictionary(
-            heartRateVariability.map { (calendar.startOfDay(for: $0.day), $0.value) },
-            uniquingKeysWith: { first, _ in first }
-        )
-        let restingByDay = Dictionary(
-            restingHeartRate.map { (calendar.startOfDay(for: $0.day), $0.value) },
-            uniquingKeysWith: { first, _ in first }
-        )
+        // Days with no recorded value are dropped rather than stored as nil, so the
+        // dictionary lookup yields Double? directly instead of a nested optional.
+        let hrvByDay = indexed(heartRateVariability, calendar: calendar)
+        let restingByDay = indexed(restingHeartRate, calendar: calendar)
 
         return days.map { day in
             let startOfDay = calendar.startOfDay(for: day)
             return DayMetrics(
                 day: startOfDay,
-                heartRateVariability: hrvByDay[startOfDay] ?? nil,
-                restingHeartRate: restingByDay[startOfDay] ?? nil,
+                heartRateVariability: hrvByDay[startOfDay],
+                restingHeartRate: restingByDay[startOfDay],
                 sleepHours: SleepAggregator.hours(on: day, intervals: sleepIntervals, calendar: calendar)
             )
         }
+    }
+
+    private static func indexed(_ metrics: [DailyMetric], calendar: Calendar) -> [Date: Double] {
+        Dictionary(
+            metrics.compactMap { metric in
+                metric.value.map { (calendar.startOfDay(for: metric.day), $0) }
+            },
+            uniquingKeysWith: { first, _ in first }
+        )
     }
 
     /// Evaluates each of the most recent `trendDays`, giving every day its own
