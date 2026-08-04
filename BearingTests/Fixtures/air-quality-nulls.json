@@ -1,0 +1,13 @@
+{
+  "latitude": 40.71,
+  "longitude": -74.01,
+  "timezone": "America/New_York",
+  "current_units": {"time": "iso8601", "european_aqi": "EAQI", "pm2_5": "μg/m³", "uv_index": ""},
+  "current": {
+    "time": "2026-08-04T12:00",
+    "interval": 3600,
+    "european_aqi": null,
+    "pm2_5": 8.1,
+    "uv_index": null
+  }
+}
