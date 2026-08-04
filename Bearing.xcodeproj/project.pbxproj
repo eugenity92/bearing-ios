@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D28308DFED1195870FBC7C /* HealthMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE00E22CCA53207BA2A3CA1 /* HealthMetric.swift */; };
 		0B7E08AC3D3A84FB52C36AF4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7452AAD5C6D1A80817C0BF70 /* RootView.swift */; };
 		0DEDE4561B17FB6591B1CE34 /* LaunchSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3D5FC07B429D2B2B890EE /* LaunchSmokeTests.swift */; };
 		0E85CC56C33BA3E3473F4F80 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BEE4A5EF03BE932F9486E9 /* TodayView.swift */; };
 		115EE9CCD704D4370C186FE0 /* air-quality.json in Resources */ = {isa = PBXBuildFile; fileRef = F7D1D31FC88AA15C2C203F5E /* air-quality.json */; };
 		18A7BD870CF299915C6209C4 /* BearingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4C7827DF3BC5C329ABF6B /* BearingApp.swift */; };
 		2943B235A5A4566DC0635CEE /* OutdoorConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072E210D48F70EBF9042E89C /* OutdoorConditions.swift */; };
+		31D55B9BB65059DF7DC4C930 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7197DE39DACF2619CD3433B /* HealthStore.swift */; };
 		3CD3136470383A14747F08B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FC159B2A25F567C544576 /* NetworkService.swift */; };
+		43C6250D902BAA7F9DFC91CB /* ReadinessProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF3D139C05B860CD68D5B3 /* ReadinessProviderTests.swift */; };
 		46275776DF6897F112C51E66 /* ResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0826901D2EEF1BCCEDFFB4A /* ResourceTests.swift */; };
 		59C6A30401EFB48468BE051B /* air-quality-nulls.json in Resources */ = {isa = PBXBuildFile; fileRef = EDED07A5AAF8C893E212661D /* air-quality-nulls.json */; };
 		5AB28A23C57024CB82CAC421 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = EE29E9C069933D3107AAFE75 /* Dependencies */; };
@@ -21,8 +24,10 @@
 		60911616C8B793013B334EE7 /* ReadinessCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7320968429DC76468C47D01E /* ReadinessCore */; };
 		70C3479E79A9A5461C88F385 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44DBB7356F45043A3E6F2D /* Coordinate.swift */; };
 		766C9244EAA89E3E28B4D692 /* NetworkErrorMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA266777F5849972D3CDE4B /* NetworkErrorMappingTests.swift */; };
+		887E7FF6467BAB764DDDD58C /* MockHealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F0E7CDB0FA328ED4581F9B /* MockHealthStore.swift */; };
 		960F14D5286C34038A189BDC /* OutdoorConditionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00C8B6289267AA8EC18F520 /* OutdoorConditionsService.swift */; };
 		9EBDE175C2733D67AA2BA2A7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29770E7208691739000456 /* LocationService.swift */; };
+		A6494D301717014777596DE9 /* ReadinessProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C96C5D772537370462F831 /* ReadinessProvider.swift */; };
 		A84322EBF237B7773F4EB9CC /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C959903AFF255EA7FB275E /* ConfigurationTests.swift */; };
 		AB8C862C56BA804B4F40EC7E /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA33521F0E8DAB535AEC19 /* MockNetworkService.swift */; };
 		BA08315BBCB38D0231194643 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAFEBBB100E9DEBDE55838 /* Fixture.swift */; };
@@ -57,6 +62,7 @@
 		072E210D48F70EBF9042E89C /* OutdoorConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorConditions.swift; sourceTree = "<group>"; };
 		1F9FC159B2A25F567C544576 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2A1D2FAC767D8D15B169C4FB /* OutdoorConditionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorConditionsServiceTests.swift; sourceTree = "<group>"; };
+		2EE00E22CCA53207BA2A3CA1 /* HealthMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMetric.swift; sourceTree = "<group>"; };
 		38BEE4A5EF03BE932F9486E9 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		3BA1539D7493B0C7C64D2BDE /* BearingUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BearingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C959903AFF255EA7FB275E /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
@@ -69,12 +75,16 @@
 		8FCA33521F0E8DAB535AEC19 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		9E4E428D96736818578044FF /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		A2E4C7827DF3BC5C329ABF6B /* BearingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearingApp.swift; sourceTree = "<group>"; };
+		A7197DE39DACF2619CD3433B /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		AEA266777F5849972D3CDE4B /* NetworkErrorMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorMappingTests.swift; sourceTree = "<group>"; };
 		B0D8224E666BA7E4FACD0928 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B4C96C5D772537370462F831 /* ReadinessProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadinessProvider.swift; sourceTree = "<group>"; };
 		BB1C3A63B55DD69727C5255D /* ReadinessCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ReadinessCore; path = Packages/ReadinessCore; sourceTree = SOURCE_ROOT; };
 		BFA3D5FC07B429D2B2B890EE /* LaunchSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSmokeTests.swift; sourceTree = "<group>"; };
+		C2F0E7CDB0FA328ED4581F9B /* MockHealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHealthStore.swift; sourceTree = "<group>"; };
 		C5E2D679139CC2C5E827EAA5 /* Bearing.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Bearing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A510812837DC97DB3A5891 /* BearingTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BearingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAAF3D139C05B860CD68D5B3 /* ReadinessProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadinessProviderTests.swift; sourceTree = "<group>"; };
 		D77D91496BEF01AAFAFE1307 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D80CF5E9FD51E9FEAF1E7E76 /* CurrentValueStreamable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueStreamable.swift; sourceTree = "<group>"; };
 		E00C8B6289267AA8EC18F520 /* OutdoorConditionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorConditionsService.swift; sourceTree = "<group>"; };
@@ -121,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				F1AAFEBBB100E9DEBDE55838 /* Fixture.swift */,
+				C2F0E7CDB0FA328ED4581F9B /* MockHealthStore.swift */,
 				8FCA33521F0E8DAB535AEC19 /* MockNetworkService.swift */,
 			);
 			path = Support;
@@ -146,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				FB44DBB7356F45043A3E6F2D /* Coordinate.swift */,
+				2EE00E22CCA53207BA2A3CA1 /* HealthMetric.swift */,
 				072E210D48F70EBF9042E89C /* OutdoorConditions.swift */,
 			);
 			path = Models;
@@ -196,6 +208,7 @@
 				5510A134FDDCFAEADC853601 /* CurrentValueStreamableTests.swift */,
 				AEA266777F5849972D3CDE4B /* NetworkErrorMappingTests.swift */,
 				2A1D2FAC767D8D15B169C4FB /* OutdoorConditionsServiceTests.swift */,
+				CAAF3D139C05B860CD68D5B3 /* ReadinessProviderTests.swift */,
 				F0826901D2EEF1BCCEDFFB4A /* ResourceTests.swift */,
 			);
 			path = BearingTests;
@@ -268,8 +281,10 @@
 		E1D5434E29E8D489D73001E5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A7197DE39DACF2619CD3433B /* HealthStore.swift */,
 				6F29770E7208691739000456 /* LocationService.swift */,
 				E00C8B6289267AA8EC18F520 /* OutdoorConditionsService.swift */,
+				B4C96C5D772537370462F831 /* ReadinessProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -406,11 +421,14 @@
 				F5A3FDECFDB511442CF694E3 /* Configuration.swift in Sources */,
 				70C3479E79A9A5461C88F385 /* Coordinate.swift in Sources */,
 				C132F1662E4C175067DFCC14 /* CurrentValueStreamable.swift in Sources */,
+				00D28308DFED1195870FBC7C /* HealthMetric.swift in Sources */,
+				31D55B9BB65059DF7DC4C930 /* HealthStore.swift in Sources */,
 				9EBDE175C2733D67AA2BA2A7 /* LocationService.swift in Sources */,
 				EDBF069E7BD76311C776F1C1 /* NetworkError.swift in Sources */,
 				3CD3136470383A14747F08B4 /* NetworkService.swift in Sources */,
 				2943B235A5A4566DC0635CEE /* OutdoorConditions.swift in Sources */,
 				960F14D5286C34038A189BDC /* OutdoorConditionsService.swift in Sources */,
+				A6494D301717014777596DE9 /* ReadinessProvider.swift in Sources */,
 				5F5DE00A3F87FA16BE421EC9 /* Resource.swift in Sources */,
 				0B7E08AC3D3A84FB52C36AF4 /* RootView.swift in Sources */,
 				0E85CC56C33BA3E3473F4F80 /* TodayView.swift in Sources */,
@@ -424,9 +442,11 @@
 				A84322EBF237B7773F4EB9CC /* ConfigurationTests.swift in Sources */,
 				BB57BA20474F03376810914E /* CurrentValueStreamableTests.swift in Sources */,
 				BA08315BBCB38D0231194643 /* Fixture.swift in Sources */,
+				887E7FF6467BAB764DDDD58C /* MockHealthStore.swift in Sources */,
 				AB8C862C56BA804B4F40EC7E /* MockNetworkService.swift in Sources */,
 				766C9244EAA89E3E28B4D692 /* NetworkErrorMappingTests.swift in Sources */,
 				D85889F88765E0E7F7A1CBFA /* OutdoorConditionsServiceTests.swift in Sources */,
+				43C6250D902BAA7F9DFC91CB /* ReadinessProviderTests.swift in Sources */,
 				46275776DF6897F112C51E66 /* ResourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
