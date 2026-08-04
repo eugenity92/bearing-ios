@@ -16,7 +16,10 @@ protocol OutdoorConditionsService: Sendable {
     func fetch(for coordinate: Coordinate) async
 }
 
-private actor LiveOutdoorConditionsService: OutdoorConditionsService {
+/// Deliberately not `private`, unlike the equivalent in the app this pattern is
+/// borrowed from. The dependency key below stays private, but the implementation
+/// has to be reachable from tests or the whole seam is decorative.
+actor LiveOutdoorConditionsService: OutdoorConditionsService {
     private let streamable = CurrentValueStreamable<Result<OutdoorConditions, any Error>?>(nil)
 
     @Dependency(\.networkService) private var networkService: any NetworkService

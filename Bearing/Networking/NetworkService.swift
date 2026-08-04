@@ -5,7 +5,7 @@ import os
 private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Network")
 
 protocol NetworkService: Sendable {
-    func sendRequest<T: Decodable>(with resource: Resource<T>) async throws -> T
+    func sendRequest<T: Decodable & Sendable>(with resource: Resource<T>) async throws -> T
 }
 
 struct LiveNetworkService: NetworkService {
@@ -16,7 +16,7 @@ struct LiveNetworkService: NetworkService {
         urlSession = URLSession(configuration: configuration)
     }
 
-    func sendRequest<T: Decodable>(with resource: Resource<T>) async throws -> T {
+    func sendRequest<T: Decodable & Sendable>(with resource: Resource<T>) async throws -> T {
         guard let urlRequest = resource.urlRequest else {
             logger.error("\(resource.debugDescription, privacy: .private) could not be turned into a URLRequest")
             throw NetworkError.badRequest
