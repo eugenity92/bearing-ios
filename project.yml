@@ -1,0 +1,127 @@
+name: Bearing
+
+options:
+  bundleIdPrefix: com.eugenity.bearing
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    DEAD_CODE_STRIPPING: YES
+    ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    STRING_CATALOG_GENERATE_SYMBOLS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+    CODE_SIGN_STYLE: Automatic
+  configs:
+    Debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG $(inherited)
+      SWIFT_OPTIMIZATION_LEVEL: -Onone
+      ENABLE_TESTABILITY: YES
+    Release:
+      SWIFT_COMPILATION_MODE: wholemodule
+
+packages:
+  ReadinessCore:
+    path: Packages/ReadinessCore
+  Dependencies:
+    url: https://github.com/pointfreeco/swift-dependencies
+    from: 1.10.0
+  Sharing:
+    url: https://github.com/pointfreeco/swift-sharing
+    from: 2.8.0
+
+targets:
+  Bearing:
+    type: application
+    platform: iOS
+    sources:
+      - path: Bearing
+        excludes:
+          - "Build configuration/*.xcconfig"
+    dependencies:
+      - package: ReadinessCore
+        product: ReadinessCore
+      - package: Dependencies
+        product: Dependencies
+      - package: Sharing
+        product: Sharing
+    configFiles:
+      Debug: Bearing/Build configuration/Debug.xcconfig
+      Release: Bearing/Build configuration/Release.xcconfig
+    info:
+      path: Bearing/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Bearing
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UIRequiredDeviceCapabilities: [armv7]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSHealthShareUsageDescription: >-
+          Bearing reads your heart rate variability, resting heart rate and sleep
+          to calculate a daily readiness score. This data never leaves your device.
+        NSLocationWhenInUseUsageDescription: >-
+          Used to fetch air quality and weather for your area. Only an approximate
+          location is sent, rounded to about one kilometre.
+        OPEN_METEO_FORECAST_HOST: $(OPEN_METEO_FORECAST_HOST)
+        OPEN_METEO_AIR_QUALITY_HOST: $(OPEN_METEO_AIR_QUALITY_HOST)
+    entitlements:
+      path: Bearing/Bearing.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
+        PRODUCT_BUNDLE_IDENTIFIER: com.eugenity.bearing
+        GENERATE_INFOPLIST_FILE: NO
+
+  BearingTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - BearingTests
+    dependencies:
+      - target: Bearing
+      - package: Dependencies
+        product: DependenciesTestSupport
+    settings:
+      base:
+        SWIFT_VERSION: "6.0"
+        PRODUCT_BUNDLE_IDENTIFIER: com.eugenity.bearing.tests
+        GENERATE_INFOPLIST_FILE: YES
+
+  BearingUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - BearingUITests
+    dependencies:
+      - target: Bearing
+    settings:
+      base:
+        SWIFT_VERSION: "6.0"
+        PRODUCT_BUNDLE_IDENTIFIER: com.eugenity.bearing.uitests
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  Bearing:
+    build:
+      targets:
+        Bearing: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - BearingTests
+        - BearingUITests
+    archive:
+      config: Release

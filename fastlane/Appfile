@@ -1,0 +1,8 @@
+# Intentionally credential-free: this is a public repository.
+#
+# The `beta` lane reads App Store Connect credentials from the environment:
+#   ASC_KEY_ID       — App Store Connect API key id
+#   ASC_ISSUER_ID    — issuer id
+#   ASC_KEY_CONTENT  — base64-encoded contents of the .p8 private key
+#
+# No Apple ID, team id, or bundle identifier is committed here.

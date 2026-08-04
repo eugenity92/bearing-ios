@@ -1,0 +1,83 @@
+require "json"
+
+default_platform(:ios)
+
+SCHEME = "Bearing".freeze
+
+# Never hard-code a simulator name. The set of installed simulators differs
+# between a developer's Mac and every GitHub runner image, and a missing device
+# is one of the most common ways an iOS pipeline breaks after an image update.
+# Prefer an explicit override, otherwise pick the highest-numbered iPhone present.
+def test_device
+  return ENV["BEARING_TEST_DEVICE"] unless ENV["BEARING_TEST_DEVICE"].to_s.empty?
+
+  devices = JSON.parse(`xcrun simctl list devices available --json`)["devices"]
+                .values.flatten
+                .map { |device| device["name"] }
+                .select { |name| name.start_with?("iPhone") }
+                .uniq
+
+  UI.user_error!("No iPhone simulators available") if devices.empty?
+
+  devices.max_by { |name| [name[/iPhone (\d+)/, 1].to_i, name.include?("Pro") ? 1 : 0] }
+end
+
+# Simulator builds need no code signing. Keeping CI signing-free means the repo
+# builds green for anyone who clones it, with no Apple Developer account and no
+# secrets. -skipMacroValidation is required because swift-dependencies ships
+# DependenciesMacrosPlugin, which otherwise fails headless with an untrusted-macro error.
+NO_SIGNING = "CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='' " \
+             "-skipMacroValidation -skipPackagePluginValidation".freeze
+
+platform :ios do
+  desc "Run the unit test suite on a simulator"
+  lane :test do
+    device = test_device
+    UI.message("Testing on #{device}")
+
+    run_tests(
+      scheme: SCHEME,
+      devices: [device],
+      cloned_source_packages_path: ".spm",
+      result_bundle: true,
+      output_directory: "fastlane/test_output",
+      code_coverage: true,
+      xcargs: NO_SIGNING
+    )
+  end
+
+  desc "Compile for the simulator without signing"
+  lane :build do
+    xcodebuild(
+      scheme: SCHEME,
+      configuration: "Debug",
+      sdk: "iphonesimulator",
+      destination: "generic/platform=iOS Simulator",
+      xcargs: NO_SIGNING
+    )
+  end
+
+  desc "Run SwiftLint in strict mode"
+  lane :lint do
+    swiftlint(strict: true, raise_if_swiftlint_error: true)
+  end
+
+  # Not exercised in CI: needs an Apple Developer account and an App Store Connect
+  # API key. Kept here so the release path is documented end to end.
+  desc "Upload a build to TestFlight"
+  lane :beta do
+    api_key = app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_content: ENV.fetch("ASC_KEY_CONTENT"),
+      is_key_content_base64: true
+    )
+
+    increment_build_number(
+      build_number: latest_testflight_build_number(api_key: api_key) + 1
+    )
+
+    build_app(scheme: SCHEME, configuration: "Release", export_method: "app-store")
+    upload_to_testflight(api_key: api_key, skip_waiting_for_build_processing: true)
+  end
+end
