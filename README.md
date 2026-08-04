@@ -104,6 +104,11 @@ Everything is **simulator-only, so no code signing, no secrets, and no Apple Dev
 
 No health data leaves the device. The only outbound request is to Open-Meteo for weather and air quality, and the coordinate sent with it is rounded to two decimal places — roughly a kilometre — because the forecast does not need to know which building you are in.
 
+## Colophon
+
+Written with AI assistance (Claude Code). The architecture, the decisions recorded in
+[`docs/decisions.md`](docs/decisions.md), and the review of everything that landed are mine.
+
 ## License
 
 MIT
