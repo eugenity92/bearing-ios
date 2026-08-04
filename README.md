@@ -13,9 +13,11 @@ Built as a study in modern iOS architecture: Swift 6 with complete strict concur
 | Milestone | State |
 |---|---|
 | M0 — project scaffolding, CI, lint | ✅ |
-| M1 — networking layer + Open-Meteo slice | 🚧 |
+| M1 — networking layer + Open-Meteo slice | ✅ |
 | M2 — HealthKit + readiness score | ⬜ |
 | M3 — docs and screenshots | ⬜ |
+
+39 tests: 11 in the domain package, 28 in the app target.
 
 ## Architecture
 
