@@ -33,19 +33,15 @@ actor LiveReadinessProvider: ReadinessProvider {
             return
         }
 
-        do {
-            let heartRateVariability = try await healthStore.dailyAverages(
-                of: .heartRateVariability,
-                from: windowStart,
-                to: windowEnd
-            )
-            let restingHeartRate = try await healthStore.dailyAverages(
-                of: .restingHeartRate,
-                from: windowStart,
-                to: windowEnd
-            )
-            let sleep = try await healthStore.sleepIntervals(from: windowStart, to: windowEnd)
+        // Each signal is fetched independently and a failure degrades that one metric
+        // rather than the screen. A partial grant — HRV allowed, sleep denied — is the
+        // normal case, not an edge case, and HealthKit reports a denied read type as
+        // absent data rather than as a denial.
+        let heartRateVariability = await dailyAverages(of: .heartRateVariability, from: windowStart, to: windowEnd)
+        let restingHeartRate = await dailyAverages(of: .restingHeartRate, from: windowStart, to: windowEnd)
+        let sleep = await sleepIntervals(from: windowStart, to: windowEnd)
 
+        do {
             let days = (0..<ReadinessWindow.totalDays).compactMap {
                 calendar.date(byAdding: .day, value: -$0, to: today)
             }.reversed()
@@ -62,6 +58,26 @@ actor LiveReadinessProvider: ReadinessProvider {
         } catch {
             logger.error("Readiness refresh failed: \(error.localizedDescription, privacy: .private)")
             await streamable.update { $0 = .failure(error) }
+        }
+    }
+}
+
+private extension LiveReadinessProvider {
+    func dailyAverages(of metric: HealthMetric, from start: Date, to end: Date) async -> [DailyMetric] {
+        do {
+            return try await healthStore.dailyAverages(of: metric, from: start, to: end)
+        } catch {
+            logger.notice("No \(metric.rawValue) available: \(error.localizedDescription)")
+            return []
+        }
+    }
+
+    func sleepIntervals(from start: Date, to end: Date) async -> [SleepInterval] {
+        do {
+            return try await healthStore.sleepIntervals(from: start, to: end)
+        } catch {
+            logger.notice("No sleep data available: \(error.localizedDescription)")
+            return []
         }
     }
 }

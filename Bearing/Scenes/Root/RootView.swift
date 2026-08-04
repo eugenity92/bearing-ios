@@ -1,8 +1,15 @@
+import Sharing
 import SwiftUI
 
 struct RootView: View {
+    @Shared(.hasRequestedHealthAccess) private var hasRequestedHealthAccess: Bool
+
     var body: some View {
-        TodayView()
+        if hasRequestedHealthAccess {
+            TodayView()
+        } else {
+            HealthAccessView()
+        }
     }
 }
 

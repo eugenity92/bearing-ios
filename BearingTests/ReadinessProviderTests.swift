@@ -71,24 +71,25 @@ struct ReadinessProviderTests {
         #expect(Set(ranges.map(\.from)).count == 1)
     }
 
-    @Test func healthStoreFailurePropagatesAsFailure() async throws {
+    /// A failing query degrades to "no data for that metric" rather than failing the
+    /// screen. HealthKit reports a denied read type as absent data, not as a denial,
+    /// so an error here is indistinguishable from a user who granted nothing — and
+    /// the honest answer in both cases is "not enough data", not a red error state.
+    @Test func healthStoreFailureDegradesToInsufficientData() async throws {
         let store = MockHealthStore(error: HealthStoreError.queryFailed)
 
-        let result = await withDependencies {
+        let snapshot = try await withDependencies {
             $0.healthStore = store
             $0.date = .constant(now)
             $0.calendar = calendar
         } operation: {
             let provider = LiveReadinessProvider()
             await provider.refresh()
-            return await firstSnapshot(from: provider)
+            return try #require(await firstSnapshot(from: provider)).get()
         }
 
-        guard case .failure(let error) = try #require(result) else {
-            Issue.record("Expected a failure result")
-            return
-        }
-        #expect(error as? HealthStoreError == .queryFailed)
+        #expect(snapshot.today == .insufficientData(.noDataToday))
+        #expect(snapshot.trend.isEmpty)
     }
 
     @Test func deniedSleepAccessRedistributesWeightsInsteadOfFailing() async throws {

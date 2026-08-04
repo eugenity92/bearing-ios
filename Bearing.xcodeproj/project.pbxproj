@@ -14,6 +14,7 @@
 		10F1D639A6479EFE6F71D4A3 /* ReadinessPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086DF6F7B5056FD8B5A2DD9 /* ReadinessPresentation.swift */; };
 		115EE9CCD704D4370C186FE0 /* air-quality.json in Resources */ = {isa = PBXBuildFile; fileRef = F7D1D31FC88AA15C2C203F5E /* air-quality.json */; };
 		18A7BD870CF299915C6209C4 /* BearingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4C7827DF3BC5C329ABF6B /* BearingApp.swift */; };
+		217197BBDC9C8BDCEB7885D8 /* HealthAccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7F1E7DEA214AAC1C9B42DE /* HealthAccessModel.swift */; };
 		2943B235A5A4566DC0635CEE /* OutdoorConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072E210D48F70EBF9042E89C /* OutdoorConditions.swift */; };
 		31D55B9BB65059DF7DC4C930 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7197DE39DACF2619CD3433B /* HealthStore.swift */; };
 		3CD3136470383A14747F08B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FC159B2A25F567C544576 /* NetworkService.swift */; };
@@ -36,9 +37,11 @@
 		BA08315BBCB38D0231194643 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAFEBBB100E9DEBDE55838 /* Fixture.swift */; };
 		BB57BA20474F03376810914E /* CurrentValueStreamableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510A134FDDCFAEADC853601 /* CurrentValueStreamableTests.swift */; };
 		C132F1662E4C175067DFCC14 /* CurrentValueStreamable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CF5E9FD51E9FEAF1E7E76 /* CurrentValueStreamable.swift */; };
+		D804153A9640F86E69A26922 /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131506CEE07C815F4E8F933 /* AppStorageKeys.swift */; };
 		D85889F88765E0E7F7A1CBFA /* OutdoorConditionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1D2FAC767D8D15B169C4FB /* OutdoorConditionsServiceTests.swift */; };
 		DADB510A50AA5AB64931126D /* DependenciesTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E33E04393D64DA05689D1384 /* DependenciesTestSupport */; };
 		DFBCD4029CCE3B59AAC2F09F /* forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 59390123ACCBBF574651DCF7 /* forecast.json */; };
+		E3DD13DAECE41C0CBDE7F40C /* HealthAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A13618DFEAD8B141A0A52 /* HealthAccessView.swift */; };
 		EDBF069E7BD76311C776F1C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D8224E666BA7E4FACD0928 /* NetworkError.swift */; };
 		F5A3FDECFDB511442CF694E3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B0101AB229EBCB0E30DEC /* Configuration.swift */; };
 		F6D7517A2199803C8A889F3C /* Sharing in Frameworks */ = {isa = PBXBuildFile; productRef = 47596F8DEC32FD8A55CD8B64 /* Sharing */; };
@@ -84,6 +87,7 @@
 		A7197DE39DACF2619CD3433B /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		AEA266777F5849972D3CDE4B /* NetworkErrorMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorMappingTests.swift; sourceTree = "<group>"; };
 		B0D8224E666BA7E4FACD0928 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B131506CEE07C815F4E8F933 /* AppStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKeys.swift; sourceTree = "<group>"; };
 		B4C96C5D772537370462F831 /* ReadinessProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadinessProvider.swift; sourceTree = "<group>"; };
 		BB1C3A63B55DD69727C5255D /* ReadinessCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ReadinessCore; path = Packages/ReadinessCore; sourceTree = SOURCE_ROOT; };
 		BFA3D5FC07B429D2B2B890EE /* LaunchSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSmokeTests.swift; sourceTree = "<group>"; };
@@ -93,7 +97,9 @@
 		CAAF3D139C05B860CD68D5B3 /* ReadinessProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadinessProviderTests.swift; sourceTree = "<group>"; };
 		D77D91496BEF01AAFAFE1307 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D80CF5E9FD51E9FEAF1E7E76 /* CurrentValueStreamable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueStreamable.swift; sourceTree = "<group>"; };
+		DB1A13618DFEAD8B141A0A52 /* HealthAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAccessView.swift; sourceTree = "<group>"; };
 		E00C8B6289267AA8EC18F520 /* OutdoorConditionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorConditionsService.swift; sourceTree = "<group>"; };
+		EC7F1E7DEA214AAC1C9B42DE /* HealthAccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAccessModel.swift; sourceTree = "<group>"; };
 		EDED07A5AAF8C893E212661D /* air-quality-nulls.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "air-quality-nulls.json"; sourceTree = "<group>"; };
 		F0826901D2EEF1BCCEDFFB4A /* ResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceTests.swift; sourceTree = "<group>"; };
 		F1AAFEBBB100E9DEBDE55838 /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		3A5A275605D2CFA715E94BFF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B131506CEE07C815F4E8F933 /* AppStorageKeys.swift */,
 				FB44DBB7356F45043A3E6F2D /* Coordinate.swift */,
 				2EE00E22CCA53207BA2A3CA1 /* HealthMetric.swift */,
 				072E210D48F70EBF9042E89C /* OutdoorConditions.swift */,
@@ -249,6 +256,15 @@
 			path = Today;
 			sourceTree = "<group>";
 		};
+		AFE49DFB142523C2A06B5A49 /* HealthAccess */ = {
+			isa = PBXGroup;
+			children = (
+				EC7F1E7DEA214AAC1C9B42DE /* HealthAccessModel.swift */,
+				DB1A13618DFEAD8B141A0A52 /* HealthAccessView.swift */,
+			);
+			path = HealthAccess;
+			sourceTree = "<group>";
+		};
 		B228079B0A2DB7E06B282C0D /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +296,7 @@
 		DE0F23CF5C15FAA4410C1444 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AFE49DFB142523C2A06B5A49 /* HealthAccess */,
 				B228079B0A2DB7E06B282C0D /* Root */,
 				AB4CAC22E27DBA3A9DEB26DB /* Today */,
 			);
@@ -426,10 +443,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D804153A9640F86E69A26922 /* AppStorageKeys.swift in Sources */,
 				18A7BD870CF299915C6209C4 /* BearingApp.swift in Sources */,
 				F5A3FDECFDB511442CF694E3 /* Configuration.swift in Sources */,
 				70C3479E79A9A5461C88F385 /* Coordinate.swift in Sources */,
 				C132F1662E4C175067DFCC14 /* CurrentValueStreamable.swift in Sources */,
+				217197BBDC9C8BDCEB7885D8 /* HealthAccessModel.swift in Sources */,
+				E3DD13DAECE41C0CBDE7F40C /* HealthAccessView.swift in Sources */,
 				00D28308DFED1195870FBC7C /* HealthMetric.swift in Sources */,
 				31D55B9BB65059DF7DC4C930 /* HealthStore.swift in Sources */,
 				9EBDE175C2733D67AA2BA2A7 /* LocationService.swift in Sources */,
