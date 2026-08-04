@@ -30,7 +30,7 @@ struct OutdoorConditionsServiceTests {
         #expect(conditions.apparentTemperature == 33.1)
         #expect(conditions.windSpeed == 5.0)
         #expect(conditions.europeanAQI == 56)
-        #expect(conditions.particulates2_5 == 10.3)
+        #expect(conditions.pm25 == 10.3)
         #expect(conditions.fetchedAt == fetchedAt)
     }
 
@@ -48,7 +48,7 @@ struct OutdoorConditionsServiceTests {
 
         #expect(conditions.europeanAQI == nil)
         #expect(conditions.uvIndex == nil)
-        #expect(conditions.particulates2_5 == 8.1)
+        #expect(conditions.pm25 == 8.1)
         #expect(conditions.temperature == 32.3)
     }
 

@@ -6,7 +6,7 @@ struct OutdoorConditions: Codable, Equatable, Sendable {
     let windSpeed: Double?
     let precipitation: Double?
     let europeanAQI: Double?
-    let particulates2_5: Double?
+    let pm25: Double?
     let uvIndex: Double?
     let fetchedAt: Date
 }
@@ -32,12 +32,12 @@ struct ForecastResponse: Decodable, Sendable {
 struct AirQualityResponse: Decodable, Sendable {
     struct Current: Decodable, Sendable {
         let europeanAQI: Double?
-        let particulates2_5: Double?
+        let pm25: Double?
         let uvIndex: Double?
 
         enum CodingKeys: String, CodingKey {
             case europeanAQI = "european_aqi"
-            case particulates2_5 = "pm2_5"
+            case pm25 = "pm2_5"
             case uvIndex = "uv_index"
         }
     }

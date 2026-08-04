@@ -79,7 +79,7 @@ extension OutdoorConditions {
             windSpeed: forecast?.windSpeed,
             precipitation: forecast?.precipitation,
             europeanAQI: airQuality?.europeanAQI,
-            particulates2_5: airQuality?.particulates2_5,
+            pm25: airQuality?.pm25,
             uvIndex: airQuality?.uvIndex,
             fetchedAt: fetchedAt
         )
@@ -104,7 +104,7 @@ private actor PreviewOutdoorConditionsService: OutdoorConditionsService {
                     windSpeed: 9.2,
                     precipitation: 0,
                     europeanAQI: 34,
-                    particulates2_5: 7.1,
+                    pm25: 7.1,
                     uvIndex: 3.2,
                     fetchedAt: Date(timeIntervalSince1970: 1_785_000_000)
                 )
