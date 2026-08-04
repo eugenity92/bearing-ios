@@ -11,6 +11,7 @@
 		0B7E08AC3D3A84FB52C36AF4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7452AAD5C6D1A80817C0BF70 /* RootView.swift */; };
 		0DEDE4561B17FB6591B1CE34 /* LaunchSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3D5FC07B429D2B2B890EE /* LaunchSmokeTests.swift */; };
 		0E85CC56C33BA3E3473F4F80 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BEE4A5EF03BE932F9486E9 /* TodayView.swift */; };
+		10F1D639A6479EFE6F71D4A3 /* ReadinessPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086DF6F7B5056FD8B5A2DD9 /* ReadinessPresentation.swift */; };
 		115EE9CCD704D4370C186FE0 /* air-quality.json in Resources */ = {isa = PBXBuildFile; fileRef = F7D1D31FC88AA15C2C203F5E /* air-quality.json */; };
 		18A7BD870CF299915C6209C4 /* BearingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E4C7827DF3BC5C329ABF6B /* BearingApp.swift */; };
 		2943B235A5A4566DC0635CEE /* OutdoorConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072E210D48F70EBF9042E89C /* OutdoorConditions.swift */; };
@@ -18,12 +19,14 @@
 		3CD3136470383A14747F08B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FC159B2A25F567C544576 /* NetworkService.swift */; };
 		43C6250D902BAA7F9DFC91CB /* ReadinessProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF3D139C05B860CD68D5B3 /* ReadinessProviderTests.swift */; };
 		46275776DF6897F112C51E66 /* ResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0826901D2EEF1BCCEDFFB4A /* ResourceTests.swift */; };
+		5999624D6994E4D8B5699172 /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919A7F692A3BAEB6C513BDD8 /* TodayModel.swift */; };
 		59C6A30401EFB48468BE051B /* air-quality-nulls.json in Resources */ = {isa = PBXBuildFile; fileRef = EDED07A5AAF8C893E212661D /* air-quality-nulls.json */; };
 		5AB28A23C57024CB82CAC421 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = EE29E9C069933D3107AAFE75 /* Dependencies */; };
 		5F5DE00A3F87FA16BE421EC9 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460C2D25C110B32C40F7815 /* Resource.swift */; };
 		60911616C8B793013B334EE7 /* ReadinessCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7320968429DC76468C47D01E /* ReadinessCore */; };
 		70C3479E79A9A5461C88F385 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44DBB7356F45043A3E6F2D /* Coordinate.swift */; };
 		766C9244EAA89E3E28B4D692 /* NetworkErrorMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA266777F5849972D3CDE4B /* NetworkErrorMappingTests.swift */; };
+		7E4600459837EF41035FC25D /* SampleHealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C0258A6702F07950E9B445 /* SampleHealthStore.swift */; };
 		887E7FF6467BAB764DDDD58C /* MockHealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F0E7CDB0FA328ED4581F9B /* MockHealthStore.swift */; };
 		960F14D5286C34038A189BDC /* OutdoorConditionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00C8B6289267AA8EC18F520 /* OutdoorConditionsService.swift */; };
 		9EBDE175C2733D67AA2BA2A7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29770E7208691739000456 /* LocationService.swift */; };
@@ -61,18 +64,21 @@
 /* Begin PBXFileReference section */
 		072E210D48F70EBF9042E89C /* OutdoorConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorConditions.swift; sourceTree = "<group>"; };
 		1F9FC159B2A25F567C544576 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		2086DF6F7B5056FD8B5A2DD9 /* ReadinessPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadinessPresentation.swift; sourceTree = "<group>"; };
 		2A1D2FAC767D8D15B169C4FB /* OutdoorConditionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutdoorConditionsServiceTests.swift; sourceTree = "<group>"; };
 		2EE00E22CCA53207BA2A3CA1 /* HealthMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMetric.swift; sourceTree = "<group>"; };
 		38BEE4A5EF03BE932F9486E9 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		3BA1539D7493B0C7C64D2BDE /* BearingUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BearingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C959903AFF255EA7FB275E /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 		4AA5FB996EB48835E1D24232 /* Bearing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bearing.entitlements; sourceTree = "<group>"; };
+		52C0258A6702F07950E9B445 /* SampleHealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHealthStore.swift; sourceTree = "<group>"; };
 		5510A134FDDCFAEADC853601 /* CurrentValueStreamableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueStreamableTests.swift; sourceTree = "<group>"; };
 		59390123ACCBBF574651DCF7 /* forecast.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forecast.json; sourceTree = "<group>"; };
 		6F29770E7208691739000456 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7452AAD5C6D1A80817C0BF70 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		8460C2D25C110B32C40F7815 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		8FCA33521F0E8DAB535AEC19 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		919A7F692A3BAEB6C513BDD8 /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
 		9E4E428D96736818578044FF /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		A2E4C7827DF3BC5C329ABF6B /* BearingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearingApp.swift; sourceTree = "<group>"; };
 		A7197DE39DACF2619CD3433B /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
@@ -236,6 +242,8 @@
 		AB4CAC22E27DBA3A9DEB26DB /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				2086DF6F7B5056FD8B5A2DD9 /* ReadinessPresentation.swift */,
+				919A7F692A3BAEB6C513BDD8 /* TodayModel.swift */,
 				38BEE4A5EF03BE932F9486E9 /* TodayView.swift */,
 			);
 			path = Today;
@@ -285,6 +293,7 @@
 				6F29770E7208691739000456 /* LocationService.swift */,
 				E00C8B6289267AA8EC18F520 /* OutdoorConditionsService.swift */,
 				B4C96C5D772537370462F831 /* ReadinessProvider.swift */,
+				52C0258A6702F07950E9B445 /* SampleHealthStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -428,9 +437,12 @@
 				3CD3136470383A14747F08B4 /* NetworkService.swift in Sources */,
 				2943B235A5A4566DC0635CEE /* OutdoorConditions.swift in Sources */,
 				960F14D5286C34038A189BDC /* OutdoorConditionsService.swift in Sources */,
+				10F1D639A6479EFE6F71D4A3 /* ReadinessPresentation.swift in Sources */,
 				A6494D301717014777596DE9 /* ReadinessProvider.swift in Sources */,
 				5F5DE00A3F87FA16BE421EC9 /* Resource.swift in Sources */,
 				0B7E08AC3D3A84FB52C36AF4 /* RootView.swift in Sources */,
+				7E4600459837EF41035FC25D /* SampleHealthStore.swift in Sources */,
+				5999624D6994E4D8B5699172 /* TodayModel.swift in Sources */,
 				0E85CC56C33BA3E3473F4F80 /* TodayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,7 +496,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Bearing/Resources/Info.plist;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,7 +615,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Bearing/Resources/Info.plist;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

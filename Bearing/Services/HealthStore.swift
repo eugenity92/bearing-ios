@@ -129,7 +129,20 @@ private extension SleepStage {
 }
 
 private enum HealthStoreKey: DependencyKey {
-    static let liveValue: any HealthStore = LiveHealthStore()
+    static var liveValue: any HealthStore {
+        #if DEBUG
+        // Launch argument rather than a build flag so the same build can be run either
+        // way — this is how screenshots are taken without a paired Apple Watch.
+        if ProcessInfo.processInfo.arguments.contains("-useSampleHealthData") {
+            return SampleHealthStore()
+        }
+        #endif
+        return LiveHealthStore()
+    }
+
+    #if DEBUG
+    static let previewValue: any HealthStore = SampleHealthStore()
+    #endif
 }
 
 extension DependencyValues {

@@ -63,6 +63,9 @@ targets:
         UILaunchScreen: {}
         UIRequiredDeviceCapabilities: [armv7]
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        # Must live in the plist itself: INFOPLIST_KEY_UIUserInterfaceStyle is only
+        # merged when GENERATE_INFOPLIST_FILE is YES, and this target supplies its own.
+        UIUserInterfaceStyle: Dark
         NSHealthShareUsageDescription: >-
           Bearing reads your heart rate variability, resting heart rate and sleep
           to calculate a daily readiness score. This data never leaves your device.
@@ -78,7 +81,6 @@ targets:
     settings:
       base:
         TARGETED_DEVICE_FAMILY: "1"
-        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
         PRODUCT_BUNDLE_IDENTIFIER: com.eugenity.bearing
         GENERATE_INFOPLIST_FILE: NO
 
